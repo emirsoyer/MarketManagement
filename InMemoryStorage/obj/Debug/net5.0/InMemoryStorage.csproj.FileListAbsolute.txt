@@ -1,0 +1,17 @@
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\InMemoryStorage.deps.json
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\InMemoryStorage.dll
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\ref\InMemoryStorage.dll
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\InMemoryStorage.pdb
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\Business.dll
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\UseCase.dll
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\UseCase.pdb
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\Business.pdb
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\InMemoryStorage.csproj.AssemblyReference.cache
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\InMemoryStorage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\InMemoryStorage.AssemblyInfoInputs.cache
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\InMemoryStorage.AssemblyInfo.cs
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\InMemoryStorage.csproj.CoreCompileInputs.cache
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\InMemoryStorage.csproj.CopyComplete
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\InMemoryStorage.dll
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\ref\InMemoryStorage.dll
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\InMemoryStorage.pdb

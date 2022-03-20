@@ -1,0 +1,142 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "Business/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/Business.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Business.dll": {}
+        }
+      },
+      "InMemoryStorage/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "UseCase": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/InMemoryStorage.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InMemoryStorage.dll": {}
+        }
+      },
+      "UseCase/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Business": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UseCase.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UseCase.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Business/1.0.0": {
+      "type": "project",
+      "path": "../Business/Business.csproj",
+      "msbuildProject": "../Business/Business.csproj"
+    },
+    "InMemoryStorage/1.0.0": {
+      "type": "project",
+      "path": "../InMemoryStorage/InMemoryStorage.csproj",
+      "msbuildProject": "../InMemoryStorage/InMemoryStorage.csproj"
+    },
+    "UseCase/1.0.0": {
+      "type": "project",
+      "path": "../UseCase/UseCase.csproj",
+      "msbuildProject": "../UseCase/UseCase.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "Business >= 1.0.0",
+      "InMemoryStorage >= 1.0.0",
+      "UseCase >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\emirs\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\emirs\\source\\repos\\MarketManagement\\WebApp\\WebApp.csproj",
+      "projectName": "WebApp",
+      "projectPath": "C:\\Users\\emirs\\source\\repos\\MarketManagement\\WebApp\\WebApp.csproj",
+      "packagesPath": "C:\\Users\\emirs\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\emirs\\source\\repos\\MarketManagement\\WebApp\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\emirs\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\emirs\\source\\repos\\MarketManagement\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\emirs\\source\\repos\\MarketManagement\\Business\\Business.csproj"
+            },
+            "C:\\Users\\emirs\\source\\repos\\MarketManagement\\InMemoryStorage\\InMemoryStorage.csproj": {
+              "projectPath": "C:\\Users\\emirs\\source\\repos\\MarketManagement\\InMemoryStorage\\InMemoryStorage.csproj"
+            },
+            "C:\\Users\\emirs\\source\\repos\\MarketManagement\\UseCase\\UseCase.csproj": {
+              "projectPath": "C:\\Users\\emirs\\source\\repos\\MarketManagement\\UseCase\\UseCase.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
