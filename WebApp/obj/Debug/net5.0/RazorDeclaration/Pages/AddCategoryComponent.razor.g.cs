@@ -89,8 +89,8 @@ using Business;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Categories")]
-    public partial class CategoryComponent : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/AddCategory")]
+    public partial class AddCategoryComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,26 +98,33 @@ using Business;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 32 "C:\Users\emirs\source\repos\MarketManagement\WebApp\Pages\CategoryComponent.razor"
-       
-    private List<Category> categories;
+#line 34 "C:\Users\emirs\source\repos\MarketManagement\WebApp\Pages\AddCategoryComponent.razor"
+ 
+    private Category category;
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        categories = ViewCategory.Execute()?.ToList();
+
+        category = new Category();
+    }
+
+    private void OnValidSubmit()
+    {
+        AddCategory.Execute(category);
+        NavigationManager.NavigateTo("/Categories");
 
     }
-    private void OnClickAddCategory()
+    private void OnCancel()
     {
-        NavigationManager.NavigateTo("/AddCategory");
+        NavigationManager.NavigateTo("/Categories");
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IAddCategory AddCategory { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IViewCategory ViewCategory { get; set; }
     }
 }
 #pragma warning restore 1591

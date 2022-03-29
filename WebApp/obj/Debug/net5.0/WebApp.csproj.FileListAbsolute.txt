@@ -64,3 +64,5 @@ C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\WebApp.dll
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\ref\WebApp.dll
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\WebApp.pdb
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\WebApp.genruntimeconfig.cache
+C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\AddCategoryComponent.razor.g.cs
+C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Pages\AddCategoryComponent.razor.g.cs

@@ -9,6 +9,7 @@ namespace UseCase.Interfaces
 {
     public interface ICategoryRepo
     {
-        public IEnumerable<Category> GetCategories();
+        IEnumerable<Category> GetCategories();
+        void AddCategory(Category category);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Business;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UseCase.Interfaces;
 
 namespace InMemoryStorage
@@ -18,6 +19,16 @@ namespace InMemoryStorage
                 new Category{CategoryId = 4, CategoryName = "OEM", CategoryDescription = "Computer Parts"}
             };
         }
+
+        public void AddCategory(Category category)
+        {
+            if (categories.Any(x => x.CategoryName.Equals(category.CategoryName, StringComparison.OrdinalIgnoreCase))) return;
+            var maxId = categories.Max(x => x.CategoryId);
+            category.CategoryId =+ maxId; //maxId + 1
+
+            categories.Add(category);
+        }
+
         public IEnumerable<Category> GetCategories()
         {
             return categories;

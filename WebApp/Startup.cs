@@ -36,10 +36,12 @@ namespace WebApp
 
             //Dependency Injection for Use Case Classes and Repos
             services.AddTransient<IViewCategory, ViewCategory>();
+            services.AddTransient<IAddCategory, AddCategory>();
 
             //Dependency Injection for In-Memory Storage
             services.AddScoped<ICategoryRepo, CategoryInMemoryRepo>();
 
+           
           
         }
 
