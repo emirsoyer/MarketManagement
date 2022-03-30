@@ -1,5 +1,6 @@
 ﻿@page "/Categories"
 @inject UseCase.IViewCategory ViewCategory
+@inject UseCase.IDeleteCategory DeleteCategory
 @inject NavigationManager NavigationManager
 <h3>Categories</h3>
 
@@ -23,7 +24,10 @@
                     <td>
                         @category.CategoryDescription
                     </td>
-                    <td><button type="button" @onclick="@( () => EditCategory(category))" class="btn btn-light">Update Category</button></td>
+                    <td>
+                        <button type="button" @onclick="@( () => EditCategory(category))" class="btn btn-light">Update Category</button>
+                        <button type="button" @onclick="@( () => RemoveCategory(category.CategoryId))" class="btn btn-light">Delete Category</button>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -37,7 +41,7 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        categories = ViewCategory.Execute()?.ToList();
+        LoadCategory();
 
     }
     private void OnClickAddCategory()
@@ -47,5 +51,14 @@
     private void EditCategory(Category category)
     {
         NavigationManager.NavigateTo($"/EditCategory/{category.CategoryId}");
+    }
+    private void RemoveCategory(int categoryId)
+    {
+        DeleteCategory.Delete(categoryId);
+        LoadCategory();
+    }
+    private void LoadCategory()
+    {
+        categories = ViewCategory.Execute()?.ToList();
     }
 }

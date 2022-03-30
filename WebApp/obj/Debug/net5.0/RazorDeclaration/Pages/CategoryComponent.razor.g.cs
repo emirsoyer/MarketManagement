@@ -98,14 +98,14 @@ using Business;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "C:\Users\emirs\source\repos\MarketManagement\WebApp\Pages\CategoryComponent.razor"
+#line 38 "C:\Users\emirs\source\repos\MarketManagement\WebApp\Pages\CategoryComponent.razor"
        
     private List<Category> categories;
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        categories = ViewCategory.Execute()?.ToList();
+        LoadCategory();
 
     }
     private void OnClickAddCategory()
@@ -116,11 +116,21 @@ using Business;
     {
         NavigationManager.NavigateTo($"/EditCategory/{category.CategoryId}");
     }
+    private void RemoveCategory(int categoryId)
+    {
+        DeleteCategory.Delete(categoryId);
+        LoadCategory();
+    }
+    private void LoadCategory()
+    {
+        categories = ViewCategory.Execute()?.ToList();
+    }
 
 #line default
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IDeleteCategory DeleteCategory { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IViewCategory ViewCategory { get; set; }
     }
 }
