@@ -28,10 +28,24 @@ namespace InMemoryStorage
 
             categories.Add(category);
         }
+        public void UpdateCategory(Category category)
+        {
+            var updateCategory = GetCategoryById(category.CategoryId);
+            if (updateCategory != null)
+            {
+                updateCategory.CategoryName = category.CategoryName;
+                updateCategory.CategoryDescription = category.CategoryDescription;
+            }
+        }
 
         public IEnumerable<Category> GetCategories()
         {
             return categories;
+        }
+
+        public Category GetCategoryById(int categoryId)
+        {
+            return categories?.FirstOrDefault(x => x.CategoryId == categoryId);
         }
     }
 }

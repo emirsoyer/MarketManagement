@@ -89,8 +89,8 @@ using Business;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/Categories")]
-    public partial class CategoryComponent : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/EditCategory/{categoryId}")]
+    public partial class EditCategoryComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -98,30 +98,46 @@ using Business;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 34 "C:\Users\emirs\source\repos\MarketManagement\WebApp\Pages\CategoryComponent.razor"
-       
-    private List<Category> categories;
+#line 36 "C:\Users\emirs\source\repos\MarketManagement\WebApp\Pages\EditCategoryComponent.razor"
+ 
+    [Parameter]
+    public string CategoryId { get; set; }
+
+    private Category category;
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        categories = ViewCategory.Execute()?.ToList();
+    }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        if (int.TryParse(this.CategoryId, out int iCategoryId))
+        {
+            var cln = GetCategoryById.Execute(iCategoryId);
+            this.category = new Category { CategoryId = cln.CategoryId, CategoryName = cln.CategoryName, CategoryDescription = cln.CategoryDescription };
+        }
 
     }
-    private void OnClickAddCategory()
+
+    private void OnValidSubmit()
     {
-        NavigationManager.NavigateTo("/AddCategory");
+        EditCategory.Execute(this.category);
+        NavigationManager.NavigateTo("/Categories");
     }
-    private void EditCategory(Category category)
+    private void OnCancel()
     {
-        NavigationManager.NavigateTo($"/EditCategory/{category.CategoryId}");
+        NavigationManager.NavigateTo("/Categories");
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IEditCategory EditCategory { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IGetCategoryById GetCategoryById { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IAddCategory AddCategory { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IViewCategory ViewCategory { get; set; }
     }
 }
 #pragma warning restore 1591
