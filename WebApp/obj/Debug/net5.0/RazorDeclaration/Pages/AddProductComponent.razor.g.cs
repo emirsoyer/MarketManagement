@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace WebApp.Shared
+namespace WebApp.Pages
 {
     #line hidden
     using System;
@@ -89,7 +89,8 @@ using Business;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/AddProducts")]
+    public partial class AddProductComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -97,20 +98,36 @@ using Business;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\emirs\source\repos\MarketManagement\WebApp\Shared\NavMenu.razor"
-       
-    private bool collapseNavMenu = true;
+#line 51 "C:\Users\emirs\source\repos\MarketManagement\WebApp\Pages\AddProductComponent.razor"
+ 
+    private Product product;
+    private IEnumerable<Category> categories;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    protected override void OnInitialized()
     {
-        collapseNavMenu = !collapseNavMenu;
+        base.OnInitialized();
+
+        product = new Product();
+        categories = ViewCategory.Execute();
+    }
+
+    private void OnValidSubmit()
+    {
+        AddProduct.Execute(product);
+        NavigationManager.NavigateTo("/Products");
+
+    }
+    private void OnCancel()
+    {
+        NavigationManager.NavigateTo("/Products");
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IViewCategory ViewCategory { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IAddProduct AddProduct { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
     }
 }
 #pragma warning restore 1591

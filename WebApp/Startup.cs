@@ -34,15 +34,19 @@ namespace WebApp
             services.AddSingleton<WeatherForecastService>();
 
 
-            //Dependency Injection for Use Case Classes and Repos
+            //Dependency Injection for Category Classes
             services.AddTransient<IViewCategory, ViewCategory>();
             services.AddTransient<IAddCategory, AddCategory>();
             services.AddTransient<IEditCategory, EditCategory>();
             services.AddTransient<IGetCategoryById, GetCategoryById>();
             services.AddTransient<IDeleteCategory, DeleteCategory>();
+            //Dependency Injection for Product Classes
+            services.AddTransient<IViewProducts, ViewProduct>();
+            services.AddTransient<IAddProduct, AddProduct>();
+
             //Dependency Injection for In-Memory Storage
             services.AddScoped<ICategoryRepo, CategoryInMemoryRepo>();
-
+            services.AddScoped<IProductRepo, ProductInMemoryRepo>();
            
           
         }

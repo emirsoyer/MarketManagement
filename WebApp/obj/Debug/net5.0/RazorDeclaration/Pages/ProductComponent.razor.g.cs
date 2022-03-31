@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace WebApp.Shared
+namespace WebApp.Pages
 {
     #line hidden
     using System;
@@ -89,7 +89,8 @@ using Business;
 #line default
 #line hidden
 #nullable disable
-    public partial class NavMenu : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/Products")]
+    public partial class ProductComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -97,20 +98,40 @@ using Business;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 38 "C:\Users\emirs\source\repos\MarketManagement\WebApp\Shared\NavMenu.razor"
+#line 45 "C:\Users\emirs\source\repos\MarketManagement\WebApp\Pages\ProductComponent.razor"
        
-    private bool collapseNavMenu = true;
+    private List<Product> products;
 
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
+    protected override void OnInitialized()
     {
-        collapseNavMenu = !collapseNavMenu;
+        base.OnInitialized();
+        LoadProduct();
+
+    }
+    private void OnClickAddProduct()
+    {
+        NavigationManager.NavigateTo("/AddProducts");
+    }
+    //private void EditCategory(Category category)
+    //{
+    //    NavigationManager.NavigateTo($"/EditCategory/{category.CategoryId}");
+    //}
+    //private void RemoveCategory(int categoryId)
+    //{
+    //    DeleteCategory.Delete(categoryId);
+    //    LoadCategory();
+    //}
+    private void LoadProduct()
+    {
+        products = ViewProduct.Execute()?.ToList();
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IGetCategoryById GetCategoryById { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IViewProducts ViewProduct { get; set; }
     }
 }
 #pragma warning restore 1591

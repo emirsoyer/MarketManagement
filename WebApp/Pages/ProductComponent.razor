@@ -1,0 +1,71 @@
+﻿@page "/Products"
+
+@inject UseCase.IViewProducts ViewProduct
+@inject UseCase.IGetCategoryById GetCategoryById
+@inject NavigationManager NavigationManager
+<h3>Products</h3>
+<br />
+@if (products != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr>
+                    <td>
+                        @GetCategoryById.Execute(product.CategoryId.Value)?.CategoryName
+                    </td>
+                    <td>
+                        @product.ProductName
+                    </td>
+                    <td>
+                        @(Math.Round(product.Price.Value, 2))
+                    </td>
+                    <td>
+                        @product.Quantity
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<br />
+<button type="button" @onclick="OnClickAddProduct" class="btn btn-primary">Add Product</button>
+
+
+@code {
+    private List<Product> products;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        LoadProduct();
+
+    }
+    private void OnClickAddProduct()
+    {
+        NavigationManager.NavigateTo("/AddProducts");
+    }
+    //private void EditCategory(Category category)
+    //{
+    //    NavigationManager.NavigateTo($"/EditCategory/{category.CategoryId}");
+    //}
+    //private void RemoveCategory(int categoryId)
+    //{
+    //    DeleteCategory.Delete(categoryId);
+    //    LoadCategory();
+    //}
+    private void LoadProduct()
+    {
+        products = ViewProduct.Execute()?.ToList();
+    }
+}
