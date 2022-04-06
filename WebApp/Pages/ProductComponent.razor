@@ -2,6 +2,7 @@
 
 @inject UseCase.IViewProducts ViewProduct
 @inject UseCase.IGetCategoryById GetCategoryById
+@inject UseCase.IDeleteProduct DeleteProduct
 @inject NavigationManager NavigationManager
 <h3>Products</h3>
 <br />
@@ -14,6 +15,7 @@
                 <th>Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -32,6 +34,13 @@
                     <td>
                         @product.Quantity
                     </td>
+                    <td>
+                        <button type="button" class="btn btn-link" @onclick="@(()=> EditProduct(product))">
+                            Update
+                        </button>
+                        &nbsp;
+                        <button type="button" class="btn btn-link" @onclick="@(()=> RemoveProduct(product.ProductId))">Delete</button>
+                    </td>
 
                 </tr>
             }
@@ -42,30 +51,27 @@
 <button type="button" @onclick="OnClickAddProduct" class="btn btn-primary">Add Product</button>
 
 
+
 @code {
-    private List<Product> products;
+    private IEnumerable<Product> products;
 
     protected override void OnInitialized()
     {
         base.OnInitialized();
-        LoadProduct();
+        products = ViewProduct.Execute();
 
     }
     private void OnClickAddProduct()
     {
         NavigationManager.NavigateTo("/AddProducts");
     }
-    //private void EditCategory(Category category)
-    //{
-    //    NavigationManager.NavigateTo($"/EditCategory/{category.CategoryId}");
-    //}
-    //private void RemoveCategory(int categoryId)
-    //{
-    //    DeleteCategory.Delete(categoryId);
-    //    LoadCategory();
-    //}
-    private void LoadProduct()
+    private void EditProduct(Product product)
     {
-        products = ViewProduct.Execute()?.ToList();
+        NavigationManager.NavigateTo($"/EditProduct/{product.ProductId}");
     }
+    private void RemoveProduct(int productId)
+    {
+        DeleteProduct.Execute(productId);
+    }
+    
 }

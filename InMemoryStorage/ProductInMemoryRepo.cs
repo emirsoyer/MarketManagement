@@ -46,5 +46,30 @@ namespace InMemoryStorage
         {
             return products;
         }
+
+        public void UpdateProduct(Product product)
+        {
+            var updateProduct = GetProductById(product.ProductId);
+            if(updateProduct != null)
+            {
+                updateProduct.ProductName = product.ProductName;
+                updateProduct.CategoryId = product.CategoryId;
+                updateProduct.Quantity = product.Quantity;
+                updateProduct.Price = product.Price;               
+            }
+        }
+        public Product GetProductById(int productId)
+        {
+            return products?.FirstOrDefault(x => x.CategoryId == productId);
+        }
+
+        public void DeleteProduct(int productId)
+        {
+            var productRemove = GetProductById(productId);
+            if(productRemove != null)
+            {
+                products.Remove(productRemove);
+            }
+        }
     }
 }

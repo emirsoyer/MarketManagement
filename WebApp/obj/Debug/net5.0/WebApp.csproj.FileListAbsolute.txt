@@ -72,3 +72,5 @@ C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclar
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Pages\ProductComponent.razor.g.cs
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\AddProductComponent.razor.g.cs
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Pages\AddProductComponent.razor.g.cs
+C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\EditProductComponent.razor.g.cs
+C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Pages\EditProductComponent.razor.g.cs
