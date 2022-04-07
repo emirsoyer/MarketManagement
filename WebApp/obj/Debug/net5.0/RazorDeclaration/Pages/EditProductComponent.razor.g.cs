@@ -118,7 +118,7 @@ using Business;
         if (int.TryParse(this.ProductId, out int iProductId))
         {
             var clnProd = GetProductById.Execute(iProductId);
-            this.product = new Product { ProductId = clnProd.ProductId, ProductName = clnProd.ProductName, Price = clnProd.Price, Quantity = clnProd.Quantity };
+            this.product = new Product { ProductId = clnProd.ProductId, CategoryId = clnProd.CategoryId, ProductName = clnProd.ProductName, Price = clnProd.Price, Quantity = clnProd.Quantity };
         }
     }
     private void OnValidSubmit()

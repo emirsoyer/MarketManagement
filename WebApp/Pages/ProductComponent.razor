@@ -35,11 +35,11 @@
                         @product.Quantity
                     </td>
                     <td>
-                        <button type="button" class="btn btn-link" @onclick="@(()=> EditProduct(product))">
+                        <button type="button" class="btn btn-light" @onclick="@(()=> EditProduct(product))">
                             Update
                         </button>
                         &nbsp;
-                        <button type="button" class="btn btn-link" @onclick="@(()=> RemoveProduct(product.ProductId))">Delete</button>
+                        <button type="button" class="btn btn-light" @onclick="@(()=> RemoveProduct(product.ProductId))">Delete</button>
                     </td>
 
                 </tr>
