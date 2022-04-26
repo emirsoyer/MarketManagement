@@ -71,5 +71,10 @@ namespace InMemoryStorage
                 products.Remove(productRemove);
             }
         }
+
+        public IEnumerable<Product> GetProductByCategoryId(int categoryId)
+        {
+            return products.Where(x => x.CategoryId == categoryId);
+        }
     }
 }

@@ -1,0 +1,74 @@
+﻿@inject UseCase.IGetProductById GetProductById
+
+
+@if (productSell != null)
+{
+    @if (!string.IsNullOrWhiteSpace(errorMessage))
+    {
+        <div class="alert alert-danger">@errorMessage</div>
+    }
+    <EditForm Model="productSell" OnValidSubmit="SellProduct">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+        <div class="form-group">
+            <label for="name">Product Name</label>
+            <input class="form-control" id="name" type="text" readonly value="@productSell.ProductName"/>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input class="form-control" id="price" type="text" readonly value="@(string.Format("{0:c}",productSell.Price))"/>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+            <InputNumber id="quantity"  @bind-Value="@productSell.Quantity" class="form-control"></InputNumber>
+        </div>
+        <button type="submit" class="btn btn-primary">Sell</button>
+    </EditForm>
+    
+}
+
+@code {
+    private Product productSell;
+    private string errorMessage;
+
+    [Parameter]
+    public Product SelectedProduct { get; set; }
+
+    [Parameter]
+    public EventCallback<Product> OnProductSold { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        if (SelectedProduct != null)
+        {
+            productSell = new Product
+            {
+                ProductId = SelectedProduct.ProductId,
+                ProductName = SelectedProduct.ProductName,
+                CategoryId = SelectedProduct.CategoryId,
+                Price = SelectedProduct.Price,
+                Quantity = 0
+            };
+        }
+    }
+
+    private void SellProduct()
+    {
+        var product = GetProductById.Execute(productSell.ProductId);
+        if (productSell.Quantity <= 0)
+        {
+            errorMessage = "Cannot sell 0 products";
+        }
+        else if (product.Quantity >= productSell.Quantity)
+        {
+            OnProductSold.InvokeAsync(productSell);
+            errorMessage = string.Empty;
+        }
+        else
+        {
+            errorMessage = $"Amount of {product.ProductName} left = {product.Quantity}. Not enough to sell";
+        }
+    }
+
+}
