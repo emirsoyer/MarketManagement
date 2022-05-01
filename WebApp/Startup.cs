@@ -49,12 +49,14 @@ namespace WebApp
             services.AddTransient<IDeleteProduct, DeleteProduct>();
             services.AddTransient<IViewProductByCategoryId, ViewProductByCategoryId>();
             services.AddTransient<ISellProduct, SellProduct>();
+            services.AddTransient<ILogTransaction, LogTransaction>();
 
             //Dependency Injection for In-Memory Storage
             services.AddScoped<ICategoryRepo, CategoryInMemoryRepo>();
             services.AddScoped<IProductRepo, ProductInMemoryRepo>();
-           
-          
+            services.AddScoped<ITransactionRepo, TransactionInMemoryRepo>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

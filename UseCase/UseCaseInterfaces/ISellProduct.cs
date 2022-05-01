@@ -2,6 +2,6 @@
 {
     public interface ISellProduct
     {
-        void Execute(int productId, int quantityToSell);
+        void Execute(string sellerName, int productId, int quantityToSell);
     }
 }
