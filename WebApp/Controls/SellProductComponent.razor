@@ -1,5 +1,5 @@
 ﻿@inject UseCase.IGetProductById GetProductById
-
+@inject UseCase.ISellProduct SellProductCase 
 
 @if (productSell != null)
 {
@@ -51,6 +51,10 @@
                 Quantity = 0
             };
         }
+        else
+        {
+            productSell = null;
+        }
     }
 
     private void SellProduct()
@@ -64,6 +68,7 @@
         {
             OnProductSold.InvokeAsync(productSell);
             errorMessage = string.Empty;
+            SellProductCase.Execute(productSell.ProductId, productSell.Quantity.Value);
         }
         else
         {

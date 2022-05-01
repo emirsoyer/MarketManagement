@@ -48,6 +48,7 @@ namespace WebApp
             services.AddTransient<IGetProductById, GetProductById>();
             services.AddTransient<IDeleteProduct, DeleteProduct>();
             services.AddTransient<IViewProductByCategoryId, ViewProductByCategoryId>();
+            services.AddTransient<ISellProduct, SellProduct>();
 
             //Dependency Injection for In-Memory Storage
             services.AddScoped<ICategoryRepo, CategoryInMemoryRepo>();

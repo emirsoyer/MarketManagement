@@ -142,6 +142,7 @@ using Business;
         {
             OnProductSold.InvokeAsync(productSell);
             errorMessage = string.Empty;
+            SellProductCase.Execute(productSell.ProductId, productSell.Quantity.Value);
         }
         else
         {
@@ -153,6 +154,7 @@ using Business;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.ISellProduct SellProductCase { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IGetProductById GetProductById { get; set; }
     }
 }
