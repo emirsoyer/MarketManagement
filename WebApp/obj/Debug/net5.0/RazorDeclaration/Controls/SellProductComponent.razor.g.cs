@@ -110,6 +110,9 @@ using Business;
     private string errorMessage;
 
     [Parameter]
+    public string SellerName { get; set; }
+
+    [Parameter]
     public Product SelectedProduct { get; set; }
 
     [Parameter]
@@ -129,10 +132,19 @@ using Business;
                 Quantity = 0
             };
         }
+        else
+        {
+            productSell = null;
+        }
     }
 
     private void SellProduct()
     {
+        if (string.IsNullOrWhiteSpace(SellerName))
+        {
+            errorMessage = "Seller needs to be identified, otherwise cannot sell product";
+            return;
+        }
         var product = GetProductById.Execute(productSell.ProductId);
         if (productSell.Quantity <= 0)
         {
@@ -142,7 +154,7 @@ using Business;
         {
             OnProductSold.InvokeAsync(productSell);
             errorMessage = string.Empty;
-            SellProductCase.Execute(productSell.ProductId, productSell.Quantity.Value);
+            SellProductCase.Execute(SellerName ,productSell.ProductId, productSell.Quantity.Value);
         }
         else
         {

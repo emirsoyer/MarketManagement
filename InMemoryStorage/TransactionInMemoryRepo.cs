@@ -16,17 +16,34 @@ namespace InMemoryStorage
             transactions = new List<Transaction>();
         }
 
-        public IEnumerable<Transaction> GetTransactions()
+        public IEnumerable<Transaction> GetTransactions(string sellerName)
         {
-            return transactions;
+            if (string.IsNullOrWhiteSpace(sellerName))
+            {
+                return transactions;
+            }
+            else
+            {
+                return transactions.Where(x =>
+                    string.Equals(x.SellerName, sellerName, StringComparison.OrdinalIgnoreCase));
+            }
+            
         }
 
-        public IEnumerable<Transaction> GetByDate(DateTime date)
+        public IEnumerable<Transaction> GetByDate(string sellerName ,DateTime date)
         {
-            return transactions.Where(x => x.TimeStamp.Date == date.Date);
+            if (string.IsNullOrWhiteSpace(sellerName))
+            {
+                return transactions.Where(x => x.TimeStamp.Date == date.Date);
+            }
+            else
+            {
+                return transactions.Where(x =>
+                    string.Equals(x.SellerName, sellerName, StringComparison.OrdinalIgnoreCase) && x.TimeStamp.Date == date.Date);
+            }
         }
 
-        public void SaveTransaction(string sellerName, int productId, double price, int quantity)
+        public void SaveTransaction(string sellerName, int productId, string productName, double price, int beforeQuantity ,int soldQuantity)
         {
             int transactionId = 0;
             if (transactions != null && transactions.Count > 0)
@@ -42,8 +59,10 @@ namespace InMemoryStorage
             {
                 TransactionId = transactionId,
                 ProductId = productId,
+                ProductName = productName,
                 Price = price,
-                Quantity = quantity,
+                BeforeQuantity = beforeQuantity,
+                SoldQuantity = soldQuantity,
                 TimeStamp = DateTime.Now,
                 SellerName = sellerName
             });

@@ -20,7 +20,7 @@ namespace UseCase
         public void Execute(string sellerName, int productId, int quantity)
         {
             var product = _getProductById.Execute(productId);
-            _transactionRepo.SaveTransaction(sellerName, productId,  product.Price.Value, quantity);
+            _transactionRepo.SaveTransaction(sellerName, productId, product.ProductName, product.Price.Value, product.Quantity.Value, quantity);
         }
     }
 }

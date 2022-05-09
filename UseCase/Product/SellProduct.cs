@@ -22,9 +22,9 @@ namespace UseCase
             var product = _productRepo.GetProductById(productId);
             if (product == null) return;
 
+            _logTransaction.Execute(sellerName, productId, quantityToSell);
             product.Quantity -= quantityToSell;
             _productRepo.UpdateProduct(product);
-            _logTransaction.Execute(sellerName, productId, quantityToSell);
         }
     }
 }

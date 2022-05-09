@@ -50,6 +50,7 @@ namespace WebApp
             services.AddTransient<IViewProductByCategoryId, ViewProductByCategoryId>();
             services.AddTransient<ISellProduct, SellProduct>();
             services.AddTransient<ILogTransaction, LogTransaction>();
+            services.AddTransient<IGetTransaction, GetTransaction>();
 
             //Dependency Injection for In-Memory Storage
             services.AddScoped<ICategoryRepo, CategoryInMemoryRepo>();

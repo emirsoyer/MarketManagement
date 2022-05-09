@@ -96,7 +96,7 @@ using Business;
 #line default
 #line hidden
 #nullable disable
-    public partial class SelectProductSellingComponent : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class TransactionComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -104,50 +104,20 @@ using Business;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 45 "C:\Users\PC\source\repos\MarketManagement\WebApp\Controls\SelectProductSellingComponent.razor"
+#line 34 "C:\Users\PC\source\repos\MarketManagement\WebApp\Controls\TransactionComponent.razor"
        
-    [Parameter]
-    public EventCallback<Product> OnProductCallback { get; set; }
+    private IEnumerable<Transaction> transactions;
 
-    private IEnumerable<Product> productsInCategory;
-
-    private int selectedCategoryId;
-    private int selectedProductId;
-
-    public int SelectedCategoryId
+    public void LoadTransactions(string sellerName)
     {
-        get { return selectedCategoryId; }
-        set
-        {
-            selectedCategoryId = value;
-            productsInCategory = ViewProductsByCategoryId.Execute(value);
-            OnSelectProduct(null);
-            StateHasChanged();
-        }
-    }
-
-    private IEnumerable<Category> categories;
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-        categories = ViewCategory.Execute();
-    }
-
-    private void OnSelectProduct(Product product)
-    {
-        OnProductCallback.InvokeAsync(product);
-        if (product != null)
-        {
-            selectedProductId = product.ProductId;
-        }
+        transactions = GetTransaction.Execute(sellerName);
+        StateHasChanged();
     }
 
 #line default
 #line hidden
 #nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IViewProductByCategoryId ViewProductsByCategoryId { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IViewCategory ViewCategory { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private UseCase.IGetTransaction GetTransaction { get; set; }
     }
 }
 #pragma warning restore 1591

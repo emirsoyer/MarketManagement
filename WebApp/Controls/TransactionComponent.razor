@@ -1,0 +1,42 @@
+﻿@inject UseCase.IGetTransaction GetTransaction
+
+@if (transactions != null)
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Seller Name</th>
+            <th>Product Name</th>
+            <th>Date and Time</th>
+            <th>Quantity Before</th>
+            <th>Quantity Sold</th>
+            <th>Quantity After</th>
+            <th>Sold Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var tran in transactions)
+            {
+                <tr>
+                    <td>@tran.SellerName</td>
+                    <td>@tran.ProductName</td>
+                    <td>@tran.TimeStamp.ToString("MM-dd-yy hh:mm")</td>
+                    <td>@tran.BeforeQuantity</td>
+                    <td>@tran.SoldQuantity</td>
+                    <td>@(tran.BeforeQuantity - tran.SoldQuantity)</td>
+                    <td>@(string.Format("{0:c}", tran.SoldQuantity * tran.Price))</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<Transaction> transactions;
+
+    public void LoadTransactions(string sellerName)
+    {
+        transactions = GetTransaction.Execute(sellerName);
+        StateHasChanged();
+    }
+}

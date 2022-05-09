@@ -152,3 +152,5 @@ C:\Users\PC\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Controls
 C:\Users\PC\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Pages\ManagementConsoleComponent.razor.g.cs
 C:\Users\PC\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Controls\SellProductComponent.razor.g.cs
 C:\Users\PC\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Controls\SellProductComponent.razor.g.cs
+C:\Users\PC\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Controls\TransactionComponent.razor.g.cs
+C:\Users\PC\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Controls\TransactionComponent.razor.g.cs

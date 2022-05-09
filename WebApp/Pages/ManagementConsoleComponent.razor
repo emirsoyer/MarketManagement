@@ -14,13 +14,15 @@
             SelectedProduct="selectedProduct" 
             OnProductSold="SellProduct"></SellProductComponent>
     </div>
-    <div class="col">Place Holder
+    <div class="col">
+        <TransactionComponent @ref="transactionComponent"></TransactionComponent>
     </div>
 </div>
 
 
 
 @code {
+    private TransactionComponent transactionComponent;
 
     private Product selectedProduct;
     private string sellerName;
@@ -30,6 +32,15 @@
         base.OnInitialized();
     }
 
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        if (firstRender)
+        {
+            transactionComponent.LoadTransactions(sellerName);
+        }
+    }
+
     private void SelectProduct(Product product)
     {
         selectedProduct = product;
@@ -37,6 +48,6 @@
 
     private void SellProduct(Product product)
     {
-
+        transactionComponent.LoadTransactions(sellerName);
     }
 }

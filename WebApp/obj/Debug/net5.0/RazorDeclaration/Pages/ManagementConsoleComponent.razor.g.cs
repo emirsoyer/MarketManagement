@@ -105,10 +105,27 @@ using Business;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 16 "C:\Users\PC\source\repos\MarketManagement\WebApp\Pages\ManagementConsoleComponent.razor"
+#line 24 "C:\Users\PC\source\repos\MarketManagement\WebApp\Pages\ManagementConsoleComponent.razor"
        
+    private TransactionComponent transactionComponent;
 
     private Product selectedProduct;
+    private string sellerName;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        if (firstRender)
+        {
+            transactionComponent.LoadTransactions(sellerName);
+        }
+    }
+
     private void SelectProduct(Product product)
     {
         selectedProduct = product;
@@ -116,7 +133,7 @@ using Business;
 
     private void SellProduct(Product product)
     {
-
+        transactionComponent.LoadTransactions(sellerName);
     }
 
 #line default
