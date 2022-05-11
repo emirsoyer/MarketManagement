@@ -1,6 +1,5 @@
 C:\Users\emirs\source\repos\MarketManagement\Business\bin\Debug\net5.0\Business.deps.json
 C:\Users\emirs\source\repos\MarketManagement\Business\bin\Debug\net5.0\Business.dll
-C:\Users\emirs\source\repos\MarketManagement\Business\bin\Debug\net5.0\ref\Business.dll
 C:\Users\emirs\source\repos\MarketManagement\Business\bin\Debug\net5.0\Business.pdb
 C:\Users\emirs\source\repos\MarketManagement\Business\obj\Debug\net5.0\Business.csproj.AssemblyReference.cache
 C:\Users\emirs\source\repos\MarketManagement\Business\obj\Debug\net5.0\Business.GeneratedMSBuildEditorConfig.editorconfig
@@ -22,3 +21,4 @@ C:\Users\PC\source\repos\MarketManagement\Business\obj\Debug\net5.0\Business.dll
 C:\Users\PC\source\repos\MarketManagement\Business\obj\Debug\net5.0\refint\Business.dll
 C:\Users\PC\source\repos\MarketManagement\Business\obj\Debug\net5.0\Business.pdb
 C:\Users\PC\source\repos\MarketManagement\Business\obj\Debug\net5.0\ref\Business.dll
+C:\Users\emirs\source\repos\MarketManagement\Business\obj\Debug\net5.0\refint\Business.dll

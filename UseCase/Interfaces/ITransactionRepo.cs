@@ -11,6 +11,7 @@ namespace UseCase.Interfaces
     {
         public IEnumerable<Transaction> GetTransactions(string sellerName);
         public IEnumerable<Transaction> GetByDate(string sellerName, DateTime date);
+        public IEnumerable<Transaction> GetByDateRange(string sellerName, DateTime startDate, DateTime endDate);
         public void SaveTransaction(string sellerName, int productId, string productName, double price, int beforeQuantity ,int soldQuantity);
 
     }

@@ -22,6 +22,7 @@ namespace InMemoryStorage
                 new Product {ProductId = 3, ProductName = "iPhone", CategoryId = 3, Price = 600, Quantity = 15},
                 new Product {ProductId = 4, ProductName = "Graphics Card", CategoryId = 4, Price = 400, Quantity = 10},
                 new Product {ProductId = 5, ProductName = "Intel CPU", CategoryId = 4, Price = 265, Quantity = 10},
+                new Product {ProductId = 6, ProductName = "Microwave", CategoryId = 4, Price = 270, Quantity = 20}
             };
         }
 

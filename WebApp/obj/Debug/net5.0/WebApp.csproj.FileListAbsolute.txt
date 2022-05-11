@@ -6,7 +6,6 @@ C:\Users\emirs\source\repos\MarketManagement\WebApp\bin\Debug\net5.0\WebApp.deps
 C:\Users\emirs\source\repos\MarketManagement\WebApp\bin\Debug\net5.0\WebApp.runtimeconfig.json
 C:\Users\emirs\source\repos\MarketManagement\WebApp\bin\Debug\net5.0\WebApp.runtimeconfig.dev.json
 C:\Users\emirs\source\repos\MarketManagement\WebApp\bin\Debug\net5.0\WebApp.dll
-C:\Users\emirs\source\repos\MarketManagement\WebApp\bin\Debug\net5.0\ref\WebApp.dll
 C:\Users\emirs\source\repos\MarketManagement\WebApp\bin\Debug\net5.0\WebApp.pdb
 C:\Users\emirs\source\repos\MarketManagement\WebApp\bin\Debug\net5.0\WebApp.Views.dll
 C:\Users\emirs\source\repos\MarketManagement\WebApp\bin\Debug\net5.0\WebApp.Views.pdb
@@ -25,8 +24,6 @@ C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\WebApp.MvcA
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\WebApp.RazorComponent.input.cache
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\CategoryComponent.razor.g.cs
-C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\Counter.razor.g.cs
-C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
@@ -39,8 +36,6 @@ C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\WebApp.TagH
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\WebApp.RazorCoreGenerate.cache
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\App.razor.g.cs
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Pages\CategoryComponent.razor.g.cs
-C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Pages\Counter.razor.g.cs
-C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
@@ -154,3 +149,12 @@ C:\Users\PC\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclarati
 C:\Users\PC\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Controls\SellProductComponent.razor.g.cs
 C:\Users\PC\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Controls\TransactionComponent.razor.g.cs
 C:\Users\PC\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Controls\TransactionComponent.razor.g.cs
+C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Controls\SelectProductSellingComponent.razor.g.cs
+C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Controls\SellProductComponent.razor.g.cs
+C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Controls\TransactionComponent.razor.g.cs
+C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\RazorDeclaration\Pages\ManagementConsoleComponent.razor.g.cs
+C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Controls\SelectProductSellingComponent.razor.g.cs
+C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Controls\SellProductComponent.razor.g.cs
+C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Controls\TransactionComponent.razor.g.cs
+C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\Razor\Pages\ManagementConsoleComponent.razor.g.cs
+C:\Users\emirs\source\repos\MarketManagement\WebApp\obj\Debug\net5.0\refint\WebApp.dll

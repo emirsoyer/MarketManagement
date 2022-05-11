@@ -1,6 +1,5 @@
 C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\InMemoryStorage.deps.json
 C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\InMemoryStorage.dll
-C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\ref\InMemoryStorage.dll
 C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\InMemoryStorage.pdb
 C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\Business.dll
 C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\bin\Debug\net5.0\UseCase.dll
@@ -32,3 +31,4 @@ C:\Users\PC\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\InMem
 C:\Users\PC\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\refint\InMemoryStorage.dll
 C:\Users\PC\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\InMemoryStorage.pdb
 C:\Users\PC\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\ref\InMemoryStorage.dll
+C:\Users\emirs\source\repos\MarketManagement\InMemoryStorage\obj\Debug\net5.0\refint\InMemoryStorage.dll
